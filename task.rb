@@ -5,7 +5,7 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  names.push("斉藤")
+  names.<<("斉藤")
   puts names
 end
 
@@ -29,7 +29,7 @@ def q4
   sports = ["サッカー", "フットサル", nil, "野球", "バスケ", nil, "バレー"]
 
   # 以下に回答を記載
-sports.delete(nil)
+sports.compact!
 puts sports
   # 以下は変更しないで下さい
   p sports
@@ -48,14 +48,17 @@ def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-
+  numbers1.each do |i|
+  numbers2 = i * 10
+  puts numbers2
+  end
 end
 
 def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-
+  puts array.to_a
   # 以下は変更しないで下さい
   p array
 end
