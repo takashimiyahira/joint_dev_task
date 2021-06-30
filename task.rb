@@ -48,7 +48,7 @@ def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-  numbers2 = numbers1.map{|x|x*10}
+  numbers2 = numbers1.map{|num|num*10}
   p numbers2
 end
 
@@ -85,11 +85,12 @@ def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
-  foods.map{|x| x.any?"うに"}
- if true
+  foods.each do |food|
+if food.include?("うに")
   puts "好物です"
 else
   puts "まぁまぁ好きです"
+end
 end
 end
 
@@ -97,7 +98,12 @@ def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
-
+sports.flatten!
+sports.uniq!
+ puts "ユーザーの趣味一覧"
+sports.each.with_index(1) do |sport , i|
+  puts "No.#{i} #{sport}"
+end
 end
 
 def q12
