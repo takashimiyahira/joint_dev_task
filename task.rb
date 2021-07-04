@@ -117,8 +117,7 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   #以下に回答を記載
-  user_data.store(:age,32) 
-   user_data.store(:address,"沖縄")
+  user_data.merge!(update_data)
  puts user_data
 end
 
@@ -135,18 +134,8 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-  # if data1.include?(:age)
-  if data1[:age]
-    puts "OK"
-  else
-    puts "NG"
-  end
-
-  if data2[:age]
-    puts "OK"
-  else
-    puts "NG"
-  end
+  puts data1[:age]? "OK" :  "NG"
+  puts data2[:age]? "OK" :  "NG"
 end
 
 def q16
